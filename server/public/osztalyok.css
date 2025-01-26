@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: 'Montserrat', serif;
+}
+
+#osztalyok-kontener {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin: auto;
+    width: 95%;
+}
+
+.osztalyTanulo {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    width: 100%;
+}
+
+.gombok {
+    font-family: 'Montserrat', serif;
+    display: flex;
+    gap: 5px;
+}
