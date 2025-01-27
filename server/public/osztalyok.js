@@ -129,7 +129,8 @@ function sorbarak(tomb) {
 }
 
 function kiir() {
-    osztalyokKontener.innerHTML = `<button onClick="filebaIr()">Fileba kiir</button>`;
+    osztalyokKontener.innerHTML = `<button onClick="filebaIr()">Fileba kiir</button>
+    <button onClick="torol()">Adatok törlése</button>`;
 }
 
 async function filebaIr() {
@@ -162,11 +163,16 @@ async function filebaIr() {
 
         if (response.ok) {
             window.alert(valasz.msg);
-            localStorage.clear();
         } else {
             window.alert(valasz.msg);
         }
     } catch (error) {
         console.log('Hiba: ' + error.message);
     }
+}
+
+function torol() {
+    let valasz = window.confirm('Tényleg törölni akarod az adatokat: ');
+
+    if (valasz) localStorage.clear();
 }
