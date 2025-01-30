@@ -25,3 +25,9 @@ body {
     display: flex;
     gap: 5px;
 }
+
+button {
+    cursor: pointer;
+    font-size: larger;
+    padding: 5px;
+}

@@ -5,9 +5,7 @@ async function betolt(osztaly) {
     let ls = [];
 
     try {
-        const response = await fetch(
-            `http://localhost:${5000 || process.env.PORT}/beolvas`
-        );
+        const response = await fetch(`http://localhost:5000/beolvas`);
 
         const valasz = await response.json();
 

@@ -3,16 +3,13 @@ async function torol() {
 
     if (valasz) {
         try {
-            let response = await fetch(
-                `http://localhost:${5000 || process.env.PORT}/torol`,
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ szoveg: 'Törlés!' }),
-                }
-            );
+            let response = await fetch(`http://localhost:5000/torol`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ szoveg: 'Törlés!' }),
+            });
 
             let valasz = await response.json();
 

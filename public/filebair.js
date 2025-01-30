@@ -2,9 +2,7 @@ async function filebaIr() {
     let ls = [];
 
     try {
-        const response = await fetch(
-            `http://localhost:${5000 || process.env.PORT}/beolvas`
-        );
+        const response = await fetch(`http://localhost:5000/beolvas`);
 
         const valasz = await response.json();
 
@@ -32,16 +30,13 @@ async function filebaIr() {
     sorbarak(ls);
 
     try {
-        let response = await fetch(
-            `http://localhost:${5000 || process.env.PORT}/kiir`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ ls }),
-            }
-        );
+        let response = await fetch(`http://localhost:5000/kiir`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ls }),
+        });
 
         let valasz = await response.json();
 

@@ -21,16 +21,13 @@ async function felGombMuvelet(adat, index, osztaly) {
 
     try {
         let szoveg = `${osztaly};${adat};fel;${beirtDatum};${datum}`;
-        let response = await fetch(
-            `http://localhost:${5000 || process.env.PORT}/feliras`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ szoveg }),
-            }
-        );
+        let response = await fetch(`http://localhost:5000/feliras`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ szoveg }),
+        });
 
         let valasz = await response.json();
 
