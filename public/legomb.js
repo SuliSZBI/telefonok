@@ -1,6 +1,7 @@
 async function leGombMuvelet(adat, index, osztaly) {
     let osztalyTanulok = document.querySelectorAll('.osztalyTanulo');
     let leGombs = document.querySelectorAll('.legomb');
+    let leSzovegs = document.querySelectorAll('.leszoveg');
     let felGombs = document.querySelectorAll('.felgomb');
     let datum = new Date();
     let ev = datum.getFullYear();
@@ -15,6 +16,7 @@ async function leGombMuvelet(adat, index, osztaly) {
         `${osztaly};${adat};le;${beirtDatum};${datum}`,
         `${osztaly};${adat};le;${beirtDatum};${datum}`
     );
+    leSzovegs[index].innerText = beirtDatum;
     felGombs[index].disabled = false;
     leGombs[index].disabled = true;
     osztalyTanulok[index].style.backgroundColor = '#fa71714d';

@@ -49,6 +49,9 @@ async function betolt(osztaly) {
                     leGombMuvelet(osztalyokSuli[i].tanulok[j], j, osztaly)
                 );
                 gombok.appendChild(leGomb);
+                let leSzoveg = document.createElement('span');
+                leSzoveg.setAttribute('class', 'leszoveg');
+                gombok.appendChild(leSzoveg);
                 let felGomb = document.createElement('button');
                 felGomb.setAttribute('class', 'felgomb');
                 felGomb.innerText = 'Fel';
@@ -57,6 +60,9 @@ async function betolt(osztaly) {
                 );
                 felGomb.disabled = true;
                 gombok.appendChild(felGomb);
+                let felSzoveg = document.createElement('span');
+                felSzoveg.setAttribute('class', 'felszoveg');
+                gombok.appendChild(felSzoveg);
                 osztalyTanulo.appendChild(gombok);
                 osztalyokKontener.appendChild(osztalyTanulo);
 
@@ -69,6 +75,7 @@ async function betolt(osztaly) {
                         leGomb.disabled = true;
                         felGomb.disabled = false;
                         osztalyTanulo.style.backgroundColor = '#fa71714d';
+                        leSzoveg.innerText = ls[k][3];
                     } else if (
                         ls[k][0] === osztaly &&
                         ls[k][1] === osztalyokSuli[i].tanulok[j] &&
@@ -77,6 +84,7 @@ async function betolt(osztaly) {
                         leGomb.disabled = true;
                         felGomb.disabled = true;
                         osztalyTanulo.style.backgroundColor = 'lightgreen';
+                        felSzoveg.innerText = ls[k][3];
                     }
                 }
             }
