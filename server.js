@@ -83,7 +83,10 @@ app.post('/feliras', async (req, res) => {
             'csvfiles',
             `feliras.csv`
         );
-        await fsPromise.appendFile(filePath, szoveg, { encoding: 'utf8' });
+
+        await fsPromise.appendFile(filePath, '\ufeff' + szoveg, {
+            encoding: 'utf8',
+        });
 
         return res.status(201).json({ msg: 'Sikeres mentés' });
     } catch (error) {
