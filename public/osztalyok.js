@@ -13,7 +13,7 @@ async function betolt(osztaly) {
             let valaszLista = valasz.lista;
             let tombLista = valaszLista.split('\n');
 
-            for (let i = 0; i < tombLista.length; i++) {
+            for (let i = 0; i < tombLista.length - 1; i++) {
                 let tomb = tombLista[i].split(';');
 
                 let t = [];
@@ -31,6 +31,7 @@ async function betolt(osztaly) {
     }
 
     sorbarak(ls);
+    console.log(ls);
 
     for (let i = 0; i < osztalyokSuli.length; i++) {
         if (osztaly === osztalyokSuli[i].osztaly) {
@@ -68,23 +69,23 @@ async function betolt(osztaly) {
 
                 for (let k = 0; k < ls.length; k++) {
                     if (
-                        ls[k][0] === osztaly &&
-                        ls[k][1] === osztalyokSuli[i].tanulok[j] &&
-                        ls[k][2] === 'le'
+                        ls[k][0].trim() === osztaly &&
+                        ls[k][1].trim() === osztalyokSuli[i].tanulok[j] &&
+                        ls[k][2].trim() === 'le'
                     ) {
                         leGomb.disabled = true;
                         felGomb.disabled = false;
                         osztalyTanulo.style.backgroundColor = '#fa71714d';
-                        leSzoveg.innerText = ls[k][3];
+                        leSzoveg.innerText = ls[k][3].trim();
                     } else if (
-                        ls[k][0] === osztaly &&
-                        ls[k][1] === osztalyokSuli[i].tanulok[j] &&
-                        ls[k][2] === 'fel'
+                        ls[k][0].trim() === osztaly &&
+                        ls[k][1].trim() === osztalyokSuli[i].tanulok[j] &&
+                        ls[k][2].trim() === 'fel'
                     ) {
                         leGomb.disabled = true;
                         felGomb.disabled = true;
                         osztalyTanulo.style.backgroundColor = 'lightgreen';
-                        felSzoveg.innerText = ls[k][3];
+                        felSzoveg.innerText = ls[k][3].trim();
                     }
                 }
             }
