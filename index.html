@@ -13,6 +13,25 @@
         <title>Osztályok</title>
     </head>
     <body>
+        <div id="login-kontener">
+            <div id="login-nev">
+                <label for="nev">Név: </label>
+                <input
+                    type="text"
+                    id="nev"
+                />
+            </div>
+            <div id="login-jelszo">
+                <label for="jelszo">Jelszó: </label>
+                <input
+                    type="password"
+                    id="jelszo"
+                />
+            </div>
+            <div id="login-button">
+                <button onclick="belepes()">Belép</button>
+            </div>
+        </div>
         <div id="osztaly-lista">
             <button onclick="betolt('9/a')">9/a</button>
             <button onclick="betolt('9/b')">9/b</button>
@@ -33,6 +52,7 @@
         <script src="./legomb.js"></script>
         <script src="./felgomb.js"></script>
         <script src="./torles.js"></script>
+        <script src="./belep.js"></script>
         <script src="./osztalyok.js"></script>
     </body>
 </html>

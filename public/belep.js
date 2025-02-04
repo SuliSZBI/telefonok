@@ -13,7 +13,7 @@ async function belepes() {
     const valasz = await response.json();
 
     if (response.ok && valasz.belep) {
-        window.location.href = '/';
+        document.getElementById('login-kontener').style.display = 'none';
     } else {
         window.alert('Nem léphetsz be!');
     }

@@ -19,14 +19,6 @@ app.get('/', (req, res) => {
     }
 });
 
-app.get('/login', (req, res) => {
-    try {
-        return res.status(200).sendFile(path.join(__dirname, 'login.html'));
-    } catch (error) {
-        return res.status(500).json({ msg: 'Valami hiba: ' + error.message });
-    }
-});
-
 app.post('/login', async (req, res) => {
     try {
         const { nev, jelszo } = req.body;
@@ -147,6 +139,14 @@ app.post('/torol', async (req, res) => {
     }
 });
 
+app.use('*', (req, res) => {
+    try {
+        return res.status(200).sendFile(path.join(__dirname, '444.html'));
+    } catch (error) {
+        return res.status(500).json({ msg: 'Valami hiba: ' + error.message });
+    }
+});
+
 app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}/login`);
+    console.log(`http://localhost:${PORT}/`);
 });

@@ -25,5 +25,5 @@ async function torol() {
 }
 
 function kilep() {
-    window.location.href = '/login';
+    document.getElementById('login-kontener').style.display = 'flex';
 }
