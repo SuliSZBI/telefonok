@@ -41,3 +41,24 @@ button {
     font-size: larger;
     padding: 5px;
 }
+
+#login-kontener {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    height: 80vh;
+    margin: auto;
+    width: 500px;
+}
+
+input,
+label {
+    font-size: 2em;
+    width: 100%;
+}
+
+#login-button button {
+    font-size: 2em;
+}

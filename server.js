@@ -19,6 +19,41 @@ app.get('/', (req, res) => {
     }
 });
 
+app.get('/login', (req, res) => {
+    try {
+        return res.status(200).sendFile(path.join(__dirname, 'login.html'));
+    } catch (error) {
+        return res.status(500).json({ msg: 'Valami hiba: ' + error.message });
+    }
+});
+
+app.post('/login', async (req, res) => {
+    try {
+        const { nev, jelszo } = req.body;
+        const filePath = path.resolve(__dirname, 'public', 'tanarok.txt');
+
+        const adatok = await fsPromise.readFile(filePath, {
+            encoding: 'utf-8',
+        });
+
+        let tomb = adatok.split('\n');
+        const tomb1 = tomb.map((elem) => elem.trim());
+
+        let helyes = tomb1.find((elem) => elem === nev && jelszo === 'telefon');
+
+        if (helyes)
+            return res
+                .status(200)
+                .json({ msg: 'Sikeres belépés!', belep: true });
+        else
+            return res
+                .status(200)
+                .json({ msg: 'Nem léphetsz be!', belep: false });
+    } catch (error) {
+        return res.status(500).json({ msg: 'Valami hiba: ' + error.message });
+    }
+});
+
 app.get('/beolvas', async (req, res) => {
     try {
         const filePath = path.resolve(
@@ -113,5 +148,5 @@ app.post('/torol', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`);
+    console.log(`http://localhost:${PORT}/login`);
 });

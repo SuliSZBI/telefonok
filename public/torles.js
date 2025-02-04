@@ -23,3 +23,7 @@ async function torol() {
         }
     }
 }
+
+function kilep() {
+    window.location.href = '/login';
+}

@@ -12,7 +12,7 @@ function sorbarak(tomb) {
 
 function kiir() {
     osztalyokKontener.innerHTML = `<button onClick="filebaIr()">Fileba kiir</button>
-    <button onClick="torol()">Adatok törlése</button>`;
+    <button onClick="torol()">Adatok törlése</button><button onClick="kilep()">Kilépés</button>`;
 }
 
 async function feltolt() {
