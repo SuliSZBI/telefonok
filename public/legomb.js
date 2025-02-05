@@ -11,7 +11,7 @@ async function leGombMuvelet(adat, index, osztaly) {
     let perc = datum.getMinutes();
     let masodperc = datum.getSeconds();
     let beirtDatum = `${ev}-${honap + 1}-${nap} ${ora}:${perc}:${masodperc}`;
-    // console.log(`${adat};${osztaly};le`);
+
     localStorage.setItem(
         `${osztaly};${adat};le;${beirtDatum};${datum}`,
         `${osztaly};${adat};le;${beirtDatum};${datum}`

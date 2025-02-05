@@ -11,7 +11,7 @@ async function felGombMuvelet(adat, index, osztaly) {
     let perc = datum.getMinutes();
     let masodperc = datum.getSeconds();
     let beirtDatum = `${ev}-${honap + 1}-${nap} ${ora}:${perc}:${masodperc}`;
-    // console.log(`${adat};${osztaly};fel`);
+
     localStorage.setItem(
         `${osztaly};${adat};fel;${beirtDatum};${datum}`,
         `${osztaly};${adat};fel;${beirtDatum};${datum}`

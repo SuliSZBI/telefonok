@@ -1,5 +1,17 @@
 let osztalyokKontener = document.querySelector('#osztalyok-kontener');
 
+function sorbarak(tomb) {
+    for (let i = 0; i < tomb.length - 1; i++) {
+        for (let j = i + 1; j < tomb.length; j++) {
+            if (tomb[j][4] <= tomb[i][4]) {
+                let elem = tomb[j];
+                tomb[j] = tomb[i];
+                tomb[i] = elem;
+            }
+        }
+    }
+}
+
 async function betolt(osztaly) {
     osztalyokKontener.innerHTML = null;
     let ls = [];
@@ -91,4 +103,8 @@ async function betolt(osztaly) {
             }
         }
     }
+}
+
+function kilep() {
+    window.location.href = '/';
 }
